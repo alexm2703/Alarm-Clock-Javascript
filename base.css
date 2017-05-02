@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{margin: 0; padding: 0;}
+h1, h2, h3, h4, h5, h6{font-family: 'Roboto', sans-serif;color: black;}
+
+section{margin-top: 30px; margin-bottom: 30px;}
+
+select{display: inline;}
+
+button{display: inline-block; min-width: 50px;min-height: 20px;}
+
+.container{margin: 0 auto; width: 1170px;}
+.text-center{text-align: center;}
+.clearfix{clear: both; display: table;}
+
+#horloge h1:after{content: "Horloge";}
+#alarme h1:before{content: "Alarme ";}
