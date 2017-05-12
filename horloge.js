@@ -1,3 +1,11 @@
+
+setInterval('afficherHeure()', 1000);
+var btnAjouterAlarme = document.getElementById("btn_ajouterAlarme");
+var btnArreterAlarme = document.getElementById("btn_arreterAlarme");
+
+btnAjouterAlarme.addEventListener("click", setAlarme, false);
+btnArreterAlarme.addEventListener("click", Arreter, false);
+
 // Afficher l'heure sur la page.
 function afficherHeure() {
 var date = new Date();
@@ -9,7 +17,6 @@ if(date.getSeconds()<10){ ajouterZeroSeconde = "0"; } else { ajouterZeroSeconde 
 
 document.getElementById("span_horloge").textContent = date.getHours() + ":" + ajouterZeroMinute + date.getMinutes() + ":" + ajouterZeroSeconde + date.getSeconds();
 };
-setInterval('afficherHeure()', 1000);
 
 // Ajouter une alarme
 function setAlarme() {
@@ -26,7 +33,6 @@ var getAlarmeSeconde = document.getElementById("select_alarmeSecondes");
 var setAlarmeSeconde = getAlarmeSeconde.options[getAlarmeSeconde.selectedIndex].value
 
 monAlarmeJSon = {"heure":setAlarmeHeure, "minute":setAlarmeMinute, "seconde":setAlarmeSeconde};
-//alert("Une alarme sonnera dans: " + monAlarmeJSon.heure +  " heure(s) " + monAlarmeJSon.minute + " minute(s) et " + monAlarmeJSon.seconde + " seconde(s)");
 
 var calculTemps = (monAlarmeJSon.heure * 3600000) + (monAlarmeJSon.minute * 60000) + (monAlarmeJSon.seconde * 1000);
 setTimeout('JouerSon()', calculTemps);
